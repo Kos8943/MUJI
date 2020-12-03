@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>無印良品</title>
     <!-- google map api 不上傳金鑰到git-->
-    <!-- <script
+    <script
       src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
       defer
-    ></script> -->
+    ></script>
     <!-- Bootstraps -->
     <link
       rel="stylesheet"
@@ -19,11 +19,31 @@
     <!-- Jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <style>
+      .usePadding {
+        /* padding: 0 437px; */
+      }
+
+      .areaPadding {
+        padding: 0 10px;
+      }
+
+      .areaAuto {
+        width: 1024px;
+        /* height: 1052px; */
+        margin: 0 auto;
+      }
+
       .navbar {
         width: 100%;
         height: 70px;
-        padding: 0 23% 0 23%;
+
+        /* padding: 0 23% 0 23%; */
         /* background-color: #eee; */
+      }
+
+      .navbarArea {
+        width: 100%;
+        padding: 0 10px;
       }
 
       .logo {
@@ -46,6 +66,7 @@
       .navbarFont {
         font-size: 13px;
         color: #666;
+        white-space: nowrap;
       }
 
       .navbarFont:hover {
@@ -55,8 +76,13 @@
 
       .mainArea {
         width: 100%;
-        padding: 0 23% 0 23%;
+        /* padding: 0 23% 0 23%; */
         margin: 10px 0;
+      }
+
+      .tipsArea {
+        width: 100%;
+        padding: 0 10px;
       }
 
       .tips {
@@ -85,10 +111,16 @@
 
       .titleImg img {
         width: 100%;
+        padding: 0 10px;
       }
 
       .smallCardArea {
-        padding: 0 15px 0 0;
+        /* padding: 0 15px 0 0; */
+        margin: 0;
+      }
+
+      .samllLinkPadding {
+        padding: 0px;
       }
 
       .smallCardDiv {
@@ -97,8 +129,9 @@
       }
 
       .smallCard {
-        width: 240px;
-        height: 150px;
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
       }
 
       .smallCardFont {
@@ -112,11 +145,11 @@
 
       .event {
         width: 100%;
-        padding: 0 23% 0 23%;
+        /* padding: 0 23% 0 23%; */
         margin: 10px 0;
         text-align: end;
         font-size: 14px;
-        background-color: #faf;
+        /* background-color: #faf; */
       }
 
       .event a {
@@ -125,7 +158,7 @@
 
       .serviceArea {
         width: 100%;
-        padding: 0 23% 0 23%;
+        /* padding: 0 23% 0 23%; */
         margin-bottom: 40px;
       }
 
@@ -136,7 +169,11 @@
       }
 
       .serviceCardArea {
-        padding: 0 15px 0 0;
+        margin: 0;
+      }
+
+      .linkPadding {
+        padding: 0 0px 0 0;
       }
 
       .serviceCard {
@@ -144,9 +181,10 @@
       }
 
       .serviceCardImg {
-        width: 327px;
-        height: 204px;
-        background-color: #faf;
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
+        /* background-color: #faf; */
       }
 
       .serviceCardFont {
@@ -160,7 +198,7 @@
 
       .liveArea {
         width: 100%;
-        padding: 0 23% 0 23%;
+        /* padding: 0 23% 0 23%; */
         margin-bottom: 40px;
       }
 
@@ -180,7 +218,7 @@
       }
 
       .liveCardArea {
-        padding-right: 15px;
+        margin: 0;
       }
 
       .liveCard {
@@ -188,8 +226,9 @@
       }
 
       .liveImg {
-        width: 327px;
-        height: 204px;
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
       }
 
       .liveTag {
@@ -199,8 +238,8 @@
         color: #fff;
         font-size: 12px;
         position: absolute;
-        top: 3%;
-        left: 3%;
+        top: 5%;
+        left: 5%;
       }
 
       .liveFont {
@@ -208,13 +247,13 @@
         font-size: 14px;
         position: absolute;
         top: 85%;
-        left: 3%;
+        left: 5%;
         font-weight: bold;
       }
 
       .shopServiceArea {
         width: 100%;
-        padding: 0 23% 0 23%;
+        /* padding: 0 23% 0 23%; */
         margin-bottom: 40px;
       }
 
@@ -234,7 +273,7 @@
       }
 
       .shopServiceCardArea {
-        padding-right: 15px;
+        margin: 0;
       }
 
       .shopServiceCard {
@@ -242,8 +281,9 @@
       }
 
       .shopServiceImg {
-        width: 327px;
-        height: 204px;
+        width: 100%;
+        height: 100%;
+        padding: 0 10px;
       }
 
       .shopServiceTag {
@@ -268,7 +308,7 @@
 
       .shopMapArea {
         width: 100%;
-        padding: 0 23% 0 23%;
+        /* padding: 0 23% 0 23%; */
         margin-bottom: 40px;
       }
 
@@ -286,200 +326,554 @@
       .shopMap {
         width: 100%;
         height: 250px;
-        /* background-color: #faf; */
+        background-color: #faf;
       }
+
+      .announcementArea {
+        width: 100%;
+        /* padding: 0 23% 0 23%; */
+        margin-bottom: 60px;
+      }
+
+      .announcementTitle {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .announcementMore {
+        font-size: 14px;
+        color: #666;
+        text-align: end;
+      }
+
+      .announcementDate {
+        margin: 0;
+        font-size: 13px;
+        color: #999;
+      }
+
+      .announcementNews {
+        color: #666;
+        font-size: 14px;
+      }
+
+      .announcementNews:hover {
+        text-decoration: none;
+        color: #666;
+      }
+
+      .footer1 {
+        width: 100%;
+        height: 51px;
+        background-color: #ebebeb;
+      }
+
+      .footer2 {
+        width: 100%;
+        /* padding: 0 23% 0 23%; */
+        background-color: #000;
+      }
+
+      .footer2Area {
+        margin: 0;
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid #333;
+      }
+
+      .footerFontArea col-lg-1 {
+        padding-right: 20px;
+        
+      }
+
+      .footerFont {
+        line-height: 14px;
+        color: #e7e7e7;
+        font-size: 14px;
+        white-space:nowrap
+      }
+
+      .footerFont:hover {
+        text-decoration: none;
+        color: #e7e7e7;
+      }
+
+      .companyArea {
+        margin: 0;
+      }
+
+      .companyFont {
+        font-size: 14px;
+        color: #888;
+      }
+
+      @media (max-width: 991.98px) {
+        .areaAuto {
+          width: 100%;
+          /* height: 1052px; */
+          margin: 0 auto;
+          padding: 0 5%;
+        }
+
+        /* .usePadding {
+          padding: 0 5%;
+        } */
+
+        .smallCard {
+          width: 100%;
+          height: 100%;
+        }
+
+        .serviceCardImg {
+          width: 100%;
+          height: 100%;
+          /* background-color: #faf; */
+        }
+
+        .liveImg {
+          width: 100%;
+          height: 100%;
+        }
+
+        .shopServiceImg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .smallCard {
+          width: 100%;
+          height: 100%;
+        }
+
+        .smallCardFont {
+          top: 85%;
+          left: 5%;
+        }
+
+        .serviceCardImg {
+          width: 100%;
+          height: 100%;
+          margin: 10px 0;
+          /* background-color: #faf; */
+        }
+
+        .serviceCardFont {
+          top: 91%;
+          left: 3%;
+        }
+
+        .liveImg {
+          width: 100%;
+          height: 100%;
+          margin: 10px 0;
+        }
+
+        .shopServiceImg {
+          width: 100%;
+          height: 100%;
+          margin: 10px 0;
+        }
+
+        .liveTag {
+          top: 5%;
+          left: 3%;
+        }
+
+        .liveFont {
+          top: 91%;
+          left: 3%;
+        }
+
+        .shopServiceTag {
+        top: 5%;
+        left: 3%;
+      }
+
+      .shopServiceFont {
+        top: 91%;
+        left: 3%;
+      }
+      }
+
+      @media (max-width: 576px) { 
+        .smallCardFont {
+          top: 90%;
+          left: 5%;
+        }
+
+        .serviceCardFont {
+          top: 88%;
+          left: 5%;
+        }
+
+        .liveTag {
+          top: 6%;
+          left: 4%;
+        }
+
+        .liveFont {
+          top:88%;
+          left: 5%;
+        }
+
+        .shopServiceTag {
+        top: 6%;
+        left: 4%;
+      }
+
+      .shopServiceFont {
+        top: 88%;
+        left: 5%;
+      }
+       }
     </style>
   </head>
   <body>
     <!-- navbar -->
-    <div class="navbar">
-      <div class="d-flex navbarArea">
-        <div class="d-flex">
-          <div><img class="logo" src="./imgs/logo.png" /></div>
-          <div class="navbarFontArea">
-            <a href="" class="navbarFont">商品情報</a>
+    <div class="navbar usePadding">
+      <div class="areaAuto">
+        <div class="d-flex d-md-flex justify-content-md-between navbarArea">
+          <!-- <div>123</div> -->
+          <div class="d-lg-flex">
+            <div class=""><img class="logo" src="./imgs/logo.png" /></div>
+            <div class="navbarFontArea d-lg-block d-md-none d-sm-none d-none">
+              <a href="" class="navbarFont">商品情報</a>
+            </div>
+            <div class="navbarFontArea d-lg-block d-md-none d-sm-none d-none">
+              <a href="" class="navbarFont">門市活動</a>
+            </div>
+            <div class="navbarFontArea d-lg-block d-md-none d-sm-none d-none">
+              <a href="" class="navbarFont">良品生活研究所</a>
+            </div>
+            <div class="navbarFontArea d-lg-block d-md-none d-sm-none d-none">
+              <a href="" class="navbarFont">顧客服務</a>
+            </div>
+            <div class="navbarFontArea d-lg-block d-md-none d-sm-none d-none">
+              <a href="" class="navbarFont">店鋪情報</a>
+            </div>
+            <div class="navbarFontArea d-lg-block d-md-none d-sm-none d-none">
+              <a href="" class="navbarFont">大宗採購</a>
+            </div>
+            <div class="navbarFontArea d-lg-block d-md-none d-sm-none d-none">
+              <a href="" class="navbarFont">展店合作</a>
+            </div>
+            <div class="navbarFontArea d-lg-block d-md-none d-sm-none d-none">
+              <a href="" class="navbarFont">企業情報</a>
+            </div>
+            <div class="navbarFontArea d-lg-block d-md-none d-sm-none d-none">
+              <a href="" class="navbarFont">公告</a>
+            </div>
           </div>
-          <div class="navbarFontArea">
-            <a href="" class="navbarFont">門市活動</a>
-          </div>
-          <div class="navbarFontArea">
-            <a href="" class="navbarFont">良品生活研究所</a>
-          </div>
-          <div class="navbarFontArea">
-            <a href="" class="navbarFont">顧客服務</a>
-          </div>
-          <div class="navbarFontArea">
-            <a href="" class="navbarFont">店鋪情報</a>
-          </div>
-          <div class="navbarFontArea">
-            <a href="" class="navbarFont">大宗採購</a>
-          </div>
-          <div class="navbarFontArea">
-            <a href="" class="navbarFont">展店合作</a>
-          </div>
-          <div class="navbarFontArea">
-            <a href="" class="navbarFont">企業情報</a>
-          </div>
-          <div class="navbarFontArea">
-            <a href="" class="navbarFont">公告</a>
-          </div>
+          <div class="search"><img src="./imgs/loupe.svg" /></div>
         </div>
-        <div class="search"><img src="./imgs/loupe.svg" /></div>
       </div>
     </div>
 
     <!-- main -->
     <div class="mainArea">
-      <div class="tips">
-        <span>貼心提醒</span><a href="" class="tipsLink">仿冒品提醒聲明</a>
-      </div>
-      <div class="titleImg">
-        <img src="./imgs/title.jpg" />
-      </div>
-      <div class="row smallCardArea">
-        <a href="" class="col-lg-3">
-          <div class="smallCardDiv">
-            <img class="smallCard" src="./imgs/small1.jpg" />
+      <div class="areaAuto">
+        <div class="tipsArea">
+          <div class="tips">
+            <span>貼心提醒</span><a href="" class="tipsLink">仿冒品提醒聲明</a>
           </div>
-        </a>
-        <a href="" class="col-lg-3">
-          <div class="smallCardDiv">
-            <img class="smallCard" src="./imgs/small2.jpg" />
-          </div>
-        </a>
-        <a href="" class="col-lg-3">
-          <div class="smallCardDiv">
-            <img class="smallCard" src="./imgs/small3.jpg" />
-          </div>
-        </a>
-        <a href="" class="col-lg-3">
-          <div class="smallCardDiv">
-            <img class="smallCard" src="./imgs/small4.jpg" />
-            <p class="smallCardFont">20 AUTUMN/WINTER</p>
-          </div>
-        </a>
-        <a href="" class="col-lg-3">
-          <div class="smallCardDiv">
-            <img class="smallCard" src="./imgs/small5.jpg" />
-            <p class="smallCardFont">輕量澳洲羽絨系列</p>
-          </div>
-        </a>
-        <a href="" class="col-lg-3">
-          <div class="smallCardDiv">
-            <img class="smallCard" src="./imgs/small6.jpg" />
-            <p class="smallCardFont">Styling Advisor 穿搭圖輯</p>
-          </div>
-        </a>
-        <a href="" class="col-lg-3">
-          <div class="smallCardDiv">
-            <img class="smallCard" src="./imgs/small7.jpg" />
-            <p class="smallCardFont">無印良品的創意料理</p>
-          </div>
-        </a>
-        <a href="" class="col-lg-3">
-          <div class="smallCardDiv">
-            <img class="smallCard" src="./imgs/small8.jpg" />
-          </div>
-        </a>
+        </div>
+
+        <div class="titleImg">
+          <img src="./imgs/title.jpg" />
+        </div>
+        <div class="row smallCardArea">
+          <a href="" class="col-lg-3 col-md-3 col-sm-6 samllLinkPadding">
+            <div class="smallCardDiv">
+              <img class="smallCard" src="./imgs/small1.jpg" />
+            </div>
+          </a>
+          <a href="" class="col-lg-3 col-md-3 col-sm-6 samllLinkPadding">
+            <div class="smallCardDiv">
+              <img class="smallCard" src="./imgs/small2.jpg" />
+            </div>
+          </a>
+          <a href="" class="col-lg-3 col-md-3 col-sm-6 samllLinkPadding">
+            <div class="smallCardDiv">
+              <img class="smallCard" src="./imgs/small3.jpg" />
+            </div>
+          </a>
+          <a href="" class="col-lg-3 col-md-3 col-sm-6 samllLinkPadding">
+            <div class="smallCardDiv">
+              <img class="smallCard" src="./imgs/small4.jpg" />
+              <p class="smallCardFont">20 AUTUMN/WINTER</p>
+            </div>
+          </a>
+          <a href="" class="col-lg-3 col-md-3 col-sm-6 samllLinkPadding">
+            <div class="smallCardDiv">
+              <img class="smallCard" src="./imgs/small5.jpg" />
+              <p class="smallCardFont">輕量澳洲羽絨系列</p>
+            </div>
+          </a>
+          <a href="" class="col-lg-3 col-md-3 col-sm-6 samllLinkPadding">
+            <div class="smallCardDiv">
+              <img class="smallCard" src="./imgs/small6.jpg" />
+              <p class="smallCardFont">Styling Advisor 穿搭圖輯</p>
+            </div>
+          </a>
+          <a href="" class="col-lg-3 col-md-3 col-sm-6 samllLinkPadding">
+            <div class="smallCardDiv">
+              <img class="smallCard" src="./imgs/small7.jpg" />
+              <p class="smallCardFont">無印良品的創意料理</p>
+            </div>
+          </a>
+          <a href="" class="col-lg-3 col-md-3 col-sm-6 samllLinkPadding">
+            <div class="smallCardDiv">
+              <img class="smallCard" src="./imgs/small8.jpg" />
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="event"><a href="">活動特集</a></div>
+    <div class="areaAuto">
+      <div class="areaPadding">
+        <div class="event usePadding"><a href="">活動特集</a></div>
+      </div>
+    </div>
 
     <!-- 良品服務 -->
-    <div class="serviceArea">
-      <p class="serviceTitle">良品服務</p>
-      <div class="row serviceCardArea">
-        <a href="" class="col-lg-4"
-          ><div class="serviceCard">
-            <img class="serviceCardImg" src="./imgs/service1.jpg" />
-            <p class="serviceCardFont">Cafe&Meal MUJI</p>
-          </div></a
-        >
-        <a href="" class="col-lg-4"
-          ><div class="serviceCard">
-            <img class="serviceCardImg" src="./imgs/service2.jpg" /></div
-        ></a>
-        <a href="" class="col-lg-4"
-          ><div class="serviceCard">
-            <img class="serviceCardImg" src="./imgs/service3.jpg" />
-            <p class="serviceCardFont" style="color: #222">大宗採購服務</p>
-          </div></a
-        >
+    <div class="serviceArea usePadding">
+      <div class="areaAuto">
+        <div class="areaPadding">
+          <p class="serviceTitle">良品服務</p>
+        </div>
+
+        <div class="row serviceCardArea">
+          <a href="" class="col-lg-4 col-md-4 linkPadding"
+            ><div class="serviceCard">
+              <img class="serviceCardImg" src="./imgs/service1.jpg" />
+              <p class="serviceCardFont">Cafe&Meal MUJI</p>
+            </div></a
+          >
+          <a href="" class="col-lg-4 col-md-4 linkPadding"
+            ><div class="serviceCard">
+              <img class="serviceCardImg" src="./imgs/service2.jpg" /></div
+          ></a>
+          <a href="" class="col-lg-4 col-md-4 linkPadding"
+            ><div class="serviceCard">
+              <img class="serviceCardImg" src="./imgs/service3.jpg" />
+              <p class="serviceCardFont" style="color: #222">大宗採購服務</p>
+            </div></a
+          >
+        </div>
       </div>
     </div>
 
     <!-- 良品生活研究所 -->
-    <div class="liveArea">
-      <div class="d-flex justify-content-between livetitleArea">
-        <span class="liveTitle">良品生活研究</span>
-        <a href="" class="liveMore">看更多</a>
-      </div>
-      <div class="row liveCardArea">
-        <a href="" class="col-lg-4">
-          <div class="liveCard">
-            <img class="liveImg" src="./imgs/live1.jpg" />
-            <div class="liveTag">最新專欄</div>
-            <p class="liveFont">所謂工作</p>
+    <div class="liveArea usePadding">
+      <div class="areaAuto">
+        <div class="areaPadding">
+          <div class="d-flex justify-content-between livetitleArea">
+            <span class="liveTitle">良品生活研究</span>
+            <a href="" class="liveMore">看更多</a>
           </div>
-        </a>
+        </div>
 
-        <a href="" class="col-lg-4">
-          <div class="liveCard">
-            <img class="liveImg" src="./imgs/live2.jpg" />
-            <div class="liveTag">熱門專欄</div>
-            <p class="liveFont" style="color: #fff">透過書本能做的事</p>
-          </div>
-        </a>
+        <div class="row liveCardArea">
+          <a href="" class="col-lg-4 col-md-4 linkPadding">
+            <div class="liveCard">
+              <img class="liveImg" src="./imgs/live1.jpg" />
+              <div class="liveTag">最新專欄</div>
+              <p class="liveFont">所謂工作</p>
+            </div>
+          </a>
 
-        <a href="" class="col-lg-4">
-          <div class="liveCard">
-            <img class="liveImg" src="./imgs/live3.jpg" />
-            <div class="liveTag">IDEA PARK</div>
-            <p class="liveFont" style="color: #fff">所謂旅行</p>
-          </div>
-        </a>
+          <a href="" class="col-lg-4 col-md-4 linkPadding">
+            <div class="liveCard">
+              <img class="liveImg" src="./imgs/live2.jpg" />
+              <div class="liveTag">熱門專欄</div>
+              <p class="liveFont" style="color: #fff">透過書本能做的事</p>
+            </div>
+          </a>
+
+          <a href="" class="col-lg-4 col-md-4 linkPadding">
+            <div class="liveCard">
+              <img class="liveImg" src="./imgs/live1.jpg" />
+              <div class="liveTag">IDEA PARK</div>
+              <p class="liveFont">所謂旅行</p>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
 
     <!-- 門市服務 -->
-    <div class="shopServiceArea">
-      <div class="d-flex justify-content-between shopServiceTitleArea">
-        <span class="shopTitle">門市服務</span>
-        <a href="" class="shopMore">門市服務一覽</a>
-      </div>
-      <div class="row shopServiceCardArea">
-        <a href="" class="col-lg-4">
-          <div class="shopServiceCard">
-            <img class="shopServiceImg" src="./imgs/shopService1.jpg" />
+    <div class="shopServiceArea usePadding">
+      <div class="areaAuto">
+        <div class="areaPadding">
+          <div class="d-flex justify-content-between shopServiceTitleArea">
+            <span class="shopTitle">門市服務</span>
+            <a href="" class="shopMore">門市服務一覽</a>
           </div>
-        </a>
-        <a href="" class="col-lg-4">
-          <div class="shopServiceCard">
-            <img class="shopServiceImg" src="./imgs/shopService2.jpg" />
-            <div class="shopServiceTag">Interior Advisor</div>
-            <p class="shopServiceFont">家庭配置諮詢服務</p>
+        </div>
+          <div class="row shopServiceCardArea">
+            <a href="" class="col-lg-4 col-md-4 linkPadding">
+              <div class="shopServiceCard">
+                <img class="shopServiceImg" src="./imgs/shopService1.jpg" />
+              </div>
+            </a>
+            <a href="" class="col-lg-4 col-md-4 linkPadding">
+              <div class="shopServiceCard">
+                <img class="shopServiceImg" src="./imgs/shopService2.jpg" />
+                <div class="shopServiceTag">Interior Advisor</div>
+                <p class="shopServiceFont">家庭配置諮詢服務</p>
+              </div>
+            </a>
+            <a href="" class="col-lg-4 col-md-4 linkPadding">
+              <div class="shopServiceCard">
+                <img class="shopServiceImg" src="./imgs/shopService3.jpg" />
+                <p class="shopServiceFont">金典概念店</p>
+              </div>
+            </a>
           </div>
-        </a>
-        <a href="" class="col-lg-4">
-          <div class="shopServiceCard">
-            <img class="shopServiceImg" src="./imgs/shopService3.jpg" />
-            <p class="shopServiceFont">金典概念店</p>
-          </div>
-        </a>
+        
       </div>
     </div>
 
     <!-- 店鋪情報 -->
-    <div class="shopMapArea">
-      <div class="d-flex justify-content-between shopServiceTitleArea">
-        <span class="shopMapTitle">店鋪情報</span>
-        <a href="" class="shopMapMore">店鋪一覽</a>
+    <div class="shopMapArea usePadding">
+      <div class="areaAuto">
+        <div class="areaPadding">
+          <div class="d-flex justify-content-between shopServiceTitleArea">
+            <span class="shopMapTitle">店鋪情報</span>
+            <a href="" class="shopMapMore">店鋪一覽</a>
+          </div>
+          <div class="shopMap" id="map"></div>
+        </div>
       </div>
-      <div class="shopMap" id="map"></div>
     </div>
 
     <!-- 公告 -->
+    <div class="announcementArea usePadding">
+      <div class="areaAuto">
+        <div class="areaPadding">
+          <div class="d-flex justify-content-between announcementTitleArea">
+            <span class="announcementTitle">公告</span>
+            <a href="" class="announcementMore">看更多</a>
+          </div>
+          <div>
+            <p class="announcementDate">2020-11-24</p>
+            <a href="" class="announcementNews"
+              >「三心堅持」，MUJI無印良品羽絨服飾系列穿搭提案</a
+            >
+          </div>
+          <div>
+            <p class="announcementDate">2020-11-10</p>
+            <a href="" class="announcementNews"
+              >有備無患，MUJI無印良品呼籲「防災意識日常化」，
+              即日起-11/25，購買指定款後背包享優惠價再贈防災手帕及手冊</a
+            >
+          </div>
+          <div>
+            <p class="announcementDate">2020-10-29</p>
+            <a href="" class="announcementNews"
+              >「拼」出想要的沙發，組合沙發讓舒適感千姿百態，
+              即日起-11/25，購買組合沙發系列享9折優惠</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- footer -->
+    <div class="footer1"></div>
+
+    <div class="footer2 usePadding">
+      <div class="areaAuto">
+        <div class="areaPadding">
+          <div class="row footer2Area">
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">商品情報</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">門市活動</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">店鋪情報</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">Café&Meal MUJI</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">會員服務</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">良品生活研究所</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">FB粉絲團</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">Instagram</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">LINE</a>
+            </div>
+          </div>
+          <div class="row footer2Area">
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">公告</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">仿冒品提醒聲明</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">人才招募</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">企業情報</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">PDF商品型錄</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">門市服務</a>
+            </div>
+          </div>
+          <div class="row footer2Area">
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">大宗採購</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">展店合作</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">博客來網路門市</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">7-ELEVEN線上購物中心</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">momo購物網路門市</a>
+            </div>
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">7-ELEVEN店中店</a>
+            </div>
+          </div>
+          <div class="row footer2Area" style="border-bottom: none">
+            <div class="footerFontArea col-lg-1 col-sm-6 col-6">
+              <a href="" class="footerFont">台灣</a>
+            </div>
+          </div>
+          <div class="row companyArea">
+            <div class="footerFontArea col-lg-3 col-sm-12">
+              <p class="companyFont">© Ryohin Keikaku Co., Ltd.</p>
+            </div>
+            <div class="footerFontArea col-lg-6 col-sm-6 col-6">
+              <p class="companyFont">
+                台灣無印良品股份有限公司 版權所有 轉載必究 © MUJI.tw Co., Ltd.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -497,19 +891,30 @@
       crossorigin="anonymous"
     ></script>
     <script>
-
-        // 24.155851902202595, 120.6632546986828
-    //   function initMap() {
-    //     var uluru = { lat: 24.155851902202595, lng: 120.6632546986828 };
-    //     var map = new google.maps.Map(document.getElementById("map"), {
-    //       zoom: 15,
-    //       center: uluru,
-    //     });
-    //     var marker = new google.maps.Marker({
-    //       position: uluru,
-    //       map: map,
-    //     });
-    //   }
+    //   24.155851902202595, 120.6632546986828
+    //   24.152674381317365, 120.6846683476838
+    //   24.16559724683424, 120.64467325151035
+        function initMap() {
+          var shop1 = { lat: 24.152674381317365, lng: 120.6632546986828 };
+          var shop2 = { lat: 24.16559724683424, lng: 120.64467325151035 };
+          var uluru = { lat: 24.155851902202595, lng: 120.6846683476838 };
+          var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 13,
+            center: uluru,
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+          });
+          var marker1 = new google.maps.Marker({
+            position: shop1,
+            map: map,
+          });
+          var marker2 = new google.maps.Marker({
+            position: shop2,
+            map: map,
+          });
+        }
     </script>
   </body>
 </html>
